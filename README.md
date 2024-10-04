@@ -1,6 +1,6 @@
 # Personal Kodi Skin Project - 🛑 NOT FOR PUBLIC USE 🛑
 
-This skin is strictly not available for public use, unlike my other skins (Nimbus and FENtastic). This repository exists solely to give me the freedom to experiment and develop without constraints and to test concepts without affecting my public projects. It is my personal playground for Kodi skin development.
+This skin is strictly not for public use, unlike my other skins (Nimbus and FENtastic). This repository exists solely to give me the freedom to experiment and develop without constraints and to test concepts without affecting my public projects. It is my personal playground for Kodi skin development.
 
 ## Important Notes
 
