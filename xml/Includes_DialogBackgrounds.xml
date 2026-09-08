@@ -28,6 +28,7 @@
 		<param name="border_texture">masks/bordertexture-46-thin.png</param>
 		<param name="border_value">46</param>
 		<param name="visible">true</param>
+		<param name="content_visible">true</param>
 		<param name="divider_visible">true</param>
 		<param name="header_top">60</param>
 		<param name="divider_top">135</param>
@@ -57,6 +58,7 @@
 			<control type="group">
 				<width>$PARAM[width]</width>
 				<height>$PARAM[height]</height>
+				<visible>$PARAM[content_visible]</visible>
 				<control type="image">
 					<left>$PARAM[left]</left>
 					<top>$PARAM[top]</top>

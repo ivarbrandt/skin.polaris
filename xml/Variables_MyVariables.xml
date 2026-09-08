@@ -1070,10 +1070,10 @@
 	</variable>
 
 	<variable name="ContextMenuTitleVar">
-		<value condition="$EXP[isMovie] | $EXP[isTVShow]">[COLOR unfocused_text]$INFO[ListItem.Title][/COLOR]</value>
-		<value condition="$EXP[isSeason]">[COLOR unfocused_text]$INFO[ListItem.TVShowTitle][/COLOR] | [COLOR unfocused_text]$INFO[ListItem.Title][/COLOR]</value>
-		<value condition="$EXP[isEpisode] + [String.IsEmpty(ListItem.Season) | String.IsEmpty(ListItem.Episode)]">[COLOR unfocused_text]$INFO[ListItem.TVShowTitle][/COLOR]</value>
-		<value condition="$EXP[isEpisode]">[COLOR unfocused_text]$INFO[ListItem.TVShowTitle][/COLOR] | [COLOR unfocused_text]$INFO[ListItem.Season]$INFO[ListItem.Episode,x,][/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(CurrentDBType),movie) | String.IsEqual(Window(Home).Property(CurrentDBType),tvshow)">[COLOR unfocused_text]$INFO[Window(Home).Property(altus.ctx.title)][/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(CurrentDBType),season)">[COLOR unfocused_text]$INFO[Window(Home).Property(altus.ctx.tvshowtitle)][/COLOR] | [COLOR unfocused_text]$INFO[Window(Home).Property(altus.ctx.title)][/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(CurrentDBType),episode) + [String.IsEmpty(Window(Home).Property(altus.ctx.season)) | String.IsEmpty(Window(Home).Property(altus.ctx.episode))]">[COLOR unfocused_text]$INFO[Window(Home).Property(altus.ctx.tvshowtitle)][/COLOR]</value>
+		<value condition="String.IsEqual(Window(Home).Property(CurrentDBType),episode)">[COLOR unfocused_text]$INFO[Window(Home).Property(altus.ctx.tvshowtitle)][/COLOR] | [COLOR unfocused_text]$INFO[Window(Home).Property(altus.ctx.season)]$INFO[Window(Home).Property(altus.ctx.episode),x,][/COLOR]</value>
 		<value>[COLOR unfocused_text]Context menu[/COLOR]</value>
 	</variable>
 

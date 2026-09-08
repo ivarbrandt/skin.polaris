@@ -7,6 +7,8 @@
 	<onload condition="String.IsEmpty(Window(home).Property(altus.search.filter.kind))">SetProperty(altus.search.filter.kind,all,home)</onload>
 	<include>ClearEdit</include>
 	<onload>ClearProperty(altus.search.from,home)</onload>
+	<onload>SetProperty(altus.search.window_active,true,home)</onload>
+	<onunload>ClearProperty(altus.search.window_active,home)</onunload>
 	<controls>
 		<include>DefaultBackground</include>
 		<!-- <control type="image" id="100000">

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol>996</defaultcontrol>
-	<include content="OpenClose_Slide_Left">
-		<param name="distance" value="498" />
+	<include content="OpenClose_Slide_Top">
+		<param name="distance" value="45" />
 	</include>
 	<onload condition="!String.IsEmpty(Window(Home).Property(CurrentDBType)) + !String.IsEqual(Window(Home).Property(CurrentDBType),season) + !String.IsEqual(Window(Home).Property(CurrentDBType),episode)">SetFocus(8001)</onload>
 	<coordinates>
@@ -10,23 +10,44 @@
 	</coordinates>
 	<controls>
 		<control type="group">
-			<width>498</width>
 			<top>0</top>
 			<bottom>0</bottom>
-			<left>0</left>
 			<animation effect="slide" start="100" end="-600,0" time="0" condition="String.IsEqual(Window(Home).Property(altus.pvr.hiding_ctx),true)">Conditional</animation>
-			<include content="DialogBackgroundCommons">
-				<param name="header_label" value="$VAR[ContextMenuTitleVar]" />
-				<param name="header_label_color" value="$VAR[FocusColorTheme]" />
-				<param name="header_id" value="1" />
-				<param name="width" value="498" />
-				<param name="top" value="40" />
-				<param name="bottom" value="40" />
-				<param name="left" value="-42" />
-				<param name="diffuse_texture" value="masks/radius_46_right.png" />
-				<param name="border_texture" value="masks/bordertexture-46-thin_right.png" />
-				<param name="border_value" value="0,46,46,46" />
-			</include>
+			<control type="group">
+				<width>498</width>
+				<top>0</top>
+				<bottom>0</bottom>
+				<centerleft>50%</centerleft>
+				<include content="DialogBackgroundCommons">
+					<param name="header_label" value="$VAR[ContextMenuTitleVar]" />
+					<param name="header_label_color" value="$VAR[FocusColorTheme]" />
+					<param name="header_id" value="1" />
+					<param name="width" value="498" />
+					<param name="top" value="40" />
+					<param name="bottom" value="40" />
+					<param name="content_visible" value="!$EXP[isCtxPoster]" />
+					<param name="diffuse_texture" value="masks/radius_46.png" />
+					<param name="border_texture" value="masks/bordertexture-46-thin.png" />
+				</include>
+			</control>
+			<control type="group">
+				<width>1058</width>
+				<top>0</top>
+				<bottom>0</bottom>
+				<centerleft>50%</centerleft>
+				<include content="DialogBackgroundCommons">
+					<param name="header_label" value="$VAR[ContextMenuTitleVar]" />
+					<param name="header_label_color" value="$VAR[FocusColorTheme]" />
+					<param name="header_id" value="2" />
+					<param name="width" value="1058" />
+					<param name="top" value="40" />
+					<param name="bottom" value="40" />
+					<param name="darken_bg" value="false" />
+					<param name="content_visible" value="$EXP[isCtxPoster]" />
+					<param name="diffuse_texture" value="masks/radius_46.png" />
+					<param name="border_texture" value="masks/bordertexture-46-thin.png" />
+				</include>
+			</control>
 			<control type="button">
 				<left>-1920</left>
 				<top>-1080</top>
@@ -36,14 +57,23 @@
 				<texturenofocus />
 				<onclick>Action(close)</onclick>
 			</control>
-			<!-- <control type="image" id="999">
-				<description>background image</description>
-				<left>0</left>
-				<top>0</top>
-				<width>498</width>
-				<height>780</height>
-				<texture colordiffuse="$VAR[FocusColorTheme]">colors/commons.png</texture>
-			</control> -->
+			<control type="group">
+			<width>498</width>
+			<top>0</top>
+			<bottom>0</bottom>
+			<centerleft>50%</centerleft>
+			<animation effect="slide" start="0" end="280,0" time="0" condition="$EXP[isCtxPoster]">Conditional</animation>
+			<control type="image">
+				<left>-520</left>
+				<width>520</width>
+				<top>170</top>
+				<height>825</height>
+				<aspectratio>stretch</aspectratio>
+				<texture diffuse="masks/poster-videoinfo.png">$INFO[Window(Home).Property(altus.ctx.poster)]</texture>
+				<!-- <bordersize>2</bordersize>
+				<bordertexture border="46" colordiffuse="$VAR[FocusColorTheme]" infill="false">masks/bordertexture-46.png</bordertexture> -->
+				<visible>$EXP[isCtxPoster]</visible>
+			</control>
 			<control type="grouplist" id="996">
 				<description>grouplist for context buttons</description>
 				<left>40</left>
@@ -81,6 +111,7 @@
 				<focusedcolor>$VAR[FocusedTextColorVar]</focusedcolor>
 				<texturefocus border="23" colordiffuse="$VAR[FocusColorTheme]">masks/radius_23.png</texturefocus>
 				<texturenofocus />
+			</control>
 			</control>
 		</control>
 	</controls>
