@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol>996</defaultcontrol>
-	<include content="OpenClose_Slide_Top">
-		<param name="distance" value="45" />
-	</include>
+	<include>OpenClose_ContextMenu</include>
 	<onload condition="!String.IsEmpty(Window(Home).Property(CurrentDBType)) + !String.IsEqual(Window(Home).Property(CurrentDBType),season) + !String.IsEqual(Window(Home).Property(CurrentDBType),episode)">SetFocus(8001)</onload>
 	<coordinates>
 		<origin x="0" y="0"/>
@@ -17,7 +15,6 @@
 				<width>498</width>
 				<top>0</top>
 				<bottom>0</bottom>
-				<centerleft>50%</centerleft>
 				<include content="DialogBackgroundCommons">
 					<param name="header_label" value="$VAR[ContextMenuTitleVar]" />
 					<param name="header_label_color" value="$VAR[FocusColorTheme]" />
@@ -25,9 +22,11 @@
 					<param name="width" value="498" />
 					<param name="top" value="40" />
 					<param name="bottom" value="40" />
+					<param name="left" value="-42" />
 					<param name="content_visible" value="!$EXP[isCtxPoster]" />
-					<param name="diffuse_texture" value="masks/radius_46.png" />
-					<param name="border_texture" value="masks/bordertexture-46-thin.png" />
+					<param name="diffuse_texture" value="masks/radius_46_right.png" />
+					<param name="border_texture" value="masks/bordertexture-46-thin_right.png" />
+					<param name="border_value" value="0,46,46,46" />
 				</include>
 			</control>
 			<control type="group">
@@ -61,8 +60,7 @@
 			<width>498</width>
 			<top>0</top>
 			<bottom>0</bottom>
-			<centerleft>50%</centerleft>
-			<animation effect="slide" start="0" end="280,0" time="0" condition="$EXP[isCtxPoster]">Conditional</animation>
+			<animation effect="slide" start="0" end="991,0" time="0" condition="$EXP[isCtxPoster]">Conditional</animation>
 			<control type="image">
 				<left>-520</left>
 				<width>520</width>

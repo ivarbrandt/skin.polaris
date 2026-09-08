@@ -160,6 +160,31 @@
 		</animation>
 	</include>
 
+	<include name="OpenClose_Slide_Left">
+		<animation type="WindowOpen">
+			<effect type="slide" start="-$PARAM[distance]" end="0" time="500" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose">
+			<effect type="slide" start="0" end="-$PARAM[distance]" time="500" tween="cubic" easing="out" />
+		</animation>
+	</include>
+
+	<include name="OpenClose_ContextMenu">
+		<animation type="WindowOpen" condition="!$EXP[isCtxPoster]">
+			<effect type="slide" start="-498" end="0" time="500" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" condition="!$EXP[isCtxPoster]">
+			<effect type="slide" start="0" end="-498" time="500" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowOpen" condition="$EXP[isCtxPoster]">
+			<effect type="fade" start="0" end="100" time="500" tween="sine" easing="out" />
+			<effect type="slide" start="0,-45" end="0" time="500" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" condition="$EXP[isCtxPoster]">
+			<effect type="fade" start="100" end="0" time="375" tween="sine" easing="out" />
+		</animation>
+	</include>
+
 	<include name="OpenClose_Slide_Right">
 		<animation type="WindowOpen">
 			<!-- <effect type="fade" start="0" end="100" time="375" tween="sine" easing="out" /> -->
