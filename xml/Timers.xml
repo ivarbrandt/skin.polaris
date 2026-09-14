@@ -21,7 +21,6 @@
     </timer>
     <timer>
         <name>autolock_view_timer</name>
-        <start reset="true">Control.HasFocus($PARAM[list_id])</start>
         <stop>Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(autolock_view_timer),1)</stop>
         <!-- <onstop>Notification(View Locked,$INFO[Container.Content] - $INFO[Container.Viewmode],3000)</onstop> -->
         <!-- <onstop>Notification(View locked$VAR[ContentTypeLabel], [UPPERCASE]$INFO[Container.Viewmode][/UPPERCASE], 2000)</onstop> -->
