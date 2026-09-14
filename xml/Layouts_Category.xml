@@ -119,7 +119,7 @@
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
 					<textcolor>unfocused_text</textcolor>
-					<font>font23_stacked_widgets_unfo</font>
+					<font>font23_stacked_widgets_fo</font>
 					<visible>![[$PARAM[focused] + Control.HasFocus($PARAM[list_id])] | [[!Control.HasFocus($PARAM[list_id]) + [String.IsEqual(Window(Home).Property(altus.$PARAM[list_id].Label),ListItem.Label) | String.IsEqual(Window(1121).Property(altus.$PARAM[list_id].Label),ListItem.Label)]] + String.IsEqual(Window(Home).Property(altus_stacked_linked_list_id),$PARAM[list_id])]]</visible>
 				</control>
 			</control>

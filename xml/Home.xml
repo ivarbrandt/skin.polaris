@@ -46,8 +46,11 @@
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<animation effect="fade" start="100" end="0" time="500" tween="sine" condition="Player.HasVideo + !String.IsEmpty(Skin.String(TrailerPlaying))">Conditional</animation>
 			<!-- WIDGETS GROUP -->
+			<include content="TopBar">
+				<param name="breadcrumbs_label" value="" />
+			</include>
 			<control type="group" id="2000">
-				<left>-1</left>
+				<left>487</left>
 				<animation condition="Skin.HasSetting(Enable.MainMenuWidgetDimming) + String.IsEqual(Skin.String(BackgroundSetting),1) + !ControlGroup(2000).HasFocus" reversible="true">
 					<effect type="fadediffuse" start="FFE9E9E9" end="FF777777" time="300" />
 				</animation>
@@ -56,7 +59,7 @@
 					<effect type="fadediffuse" start="FFE9E9E9" end="FF777777" time="300" />
 				</animation>
 				<!-- <animation effect="slide" condition="!String.IsEmpty(Window(Home).Property(FlixWidget))" time="0" start="0,0" end="-498,0" tween="cubic" easing="inout">Conditional</animation> -->
-				<animation effect="slide" condition="!ControlGroup(15000).HasFocus" time="500" start="0,0" end="498,0" tween="cubic" easing="inout">Conditional</animation>
+				<!-- <animation effect="slide" condition="!ControlGroup(15000).HasFocus" time="500" start="0,0" end="498,0" tween="cubic" easing="inout">Conditional</animation> -->
 				<!-- <animation type="Conditional" condition="Control.IsVisible(20000)" reversible="false">
 					<effect type="slide" end="0,20" time="60" tween="sine" />
 					<effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
@@ -95,7 +98,8 @@
 						</include>
 					</control>
 				</control>
-				<include>HomeWidgetGroups</include>
+				<include condition="!Skin.HasSetting(Dev.HomeWalls)">HomeWidgetGroups</include>
+				<include condition="Skin.HasSetting(Dev.HomeWalls)">HomeWallsPrototype</include>
 				<control type="group" id="15000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
 					<include content="Visible_Right_Delayed">
@@ -176,9 +180,6 @@
 					</include>
 				</control>
 			</control>
-			<include content="TopBar">
-				<param name="breadcrumbs_label" value="" />
-			</include>
 			<include>BottomBar</include>
 			<!-- <control type="textbox" id="9999">
 				<left>100</left>
@@ -212,7 +213,7 @@
 					<width>498</width>
 					<control type="list" id="9000">
 						<animation effect="slide" condition="!ControlGroup(2000).HasFocus + ![Control.HasFocus(9000) | ControlGroup(700).HasFocus]" time="300" start="0,0" end="-498,0" tween="cubic" easing="inout">Conditional</animation>
-						<left>40</left>
+						<left>30</left>
 						<top>180</top>
 						<width>428</width>
 						<height>850</height>
@@ -246,14 +247,14 @@
 					<!-- Section submenus (positioned right of main menu) -->
 					<control type="group">
 						<animation effect="slide" condition="ControlGroup(2000).HasFocus | Control.HasFocus(9000) | ControlGroup(700).HasFocus" time="300" start="0,0" end="-498,0" tween="cubic" easing="inout">Conditional</animation>
-						<left>40</left>
+						<left>30</left>
 						<top>180</top>
 						<width>428</width>
 						<height>832</height>
 						<include>HomeSubmenus</include>
 					</control>
 					<control type="group">
-						<left>23</left>
+						<left>13</left>
 						<top>70</top>
 						<width>460</width>
 						<height>140</height>
