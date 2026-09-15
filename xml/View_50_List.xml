@@ -887,7 +887,7 @@
 								<width>810</width>
 								<bottom>8</bottom>
 								<aligny>center</aligny>
-								<include condition="String.IsEqual(Skin.String(FontSizeSetting),0">50_FanartList_FontPlot_Default</include>
+								<include condition="String.IsEqual(Skin.String(FontSizeSetting),0)">50_FanartList_FontPlot_Default</include>
 								<include condition="String.IsEqual(Skin.String(FontSizeSetting),1)">50_FanartList_FontPlot_Large</include>
 								<label>$VAR[RI_Plot]</label>
 								<textcolor>unfocused_text</textcolor>
@@ -1074,7 +1074,7 @@
 								<width>830</width>
 								<bottom>9</bottom>
 								<aligny>center</aligny>
-								<include condition="String.IsEqual(Skin.String(FontSizeSetting),0">50_FanartList_FontPlot_Default</include>
+								<include condition="String.IsEqual(Skin.String(FontSizeSetting),0)">50_FanartList_FontPlot_Default</include>
 								<include condition="String.IsEqual(Skin.String(FontSizeSetting),1)">50_FanartList_FontPlot_Large</include>
 								<label>$VAR[RI_Plot]</label>
 								<textcolor>unfocused_text</textcolor>
@@ -1264,7 +1264,7 @@
 								<width>930</width>
 								<bottom>9</bottom>
 								<aligny>center</aligny>
-								<include condition="String.IsEqual(Skin.String(FontSizeSetting),0">50_FanartList_FontPlot_Default</include>
+								<include condition="String.IsEqual(Skin.String(FontSizeSetting),0)">50_FanartList_FontPlot_Default</include>
 								<include condition="String.IsEqual(Skin.String(FontSizeSetting),1)">50_FanartList_FontPlot_Large</include>
 								<label>$VAR[RI_Plot]</label>
 								<textcolor>unfocused_text</textcolor>
@@ -1457,7 +1457,7 @@
 								<width>1096</width>
 								<bottom>9</bottom>
 								<aligny>center</aligny>
-								<include condition="String.IsEqual(Skin.String(FontSizeSetting),0">50_FanartList_FontPlot_Default</include>
+								<include condition="String.IsEqual(Skin.String(FontSizeSetting),0)">50_FanartList_FontPlot_Default</include>
 								<include condition="String.IsEqual(Skin.String(FontSizeSetting),1)">50_FanartList_FontPlot_Large</include>
 								<label>$VAR[RI_Plot]</label>
 								<textcolor>unfocused_text</textcolor>
@@ -1726,7 +1726,7 @@
 								<width>900</width>
 								<bottom>10</bottom>
 								<aligny>center</aligny>
-								<include condition="String.IsEqual(Skin.String(FontSizeSetting),0">50_FanartList_FontPlot_Default</include>
+								<include condition="String.IsEqual(Skin.String(FontSizeSetting),0)">50_FanartList_FontPlot_Default</include>
 								<include condition="String.IsEqual(Skin.String(FontSizeSetting),1)">50_FanartList_FontPlot_Large</include>
 								<label>$VAR[ListBoxInfoVar]</label>
 								<textcolor>unfocused_text</textcolor>
