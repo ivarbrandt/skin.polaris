@@ -60,8 +60,7 @@
 	<include file="Layouts_Weather.xml" />
 	<include file="script-altus-main_menu.xml" />
 	<include file="script-altus-submenus.xml" />
-	<include file="script-altus-widgets.xml" />
-	<include file="script-altus-home_groups.xml" />
+	<include file="script-altus-home_walls.xml" />
 	<include file="script-altus-search_widgets.xml" />
 	<include file="script-altus-search_kind_filter.xml" />
 	<include file="View_50_Includes.xml" />

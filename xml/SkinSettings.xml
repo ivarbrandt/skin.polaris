@@ -695,13 +695,6 @@
 					<selected>Skin.HasSetting(Enable.WMButton)</selected>
 					<onclick>Skin.ToggleSetting(Enable.WMButton)</onclick>
 				</control>
-				<control type="radiobutton" id="64009">
-					<label>Home walls prototype (dev)</label>
-					<include>DefaultSettingButton</include>
-					<selected>Skin.HasSetting(Dev.HomeWalls)</selected>
-					<onclick>Skin.ToggleSetting(Dev.HomeWalls)</onclick>
-					<onclick>ReloadSkin()</onclick>
-				</control>
 				<!-- STACKED WIDGET DELAY -->
 				<control type="button" id="64006">
 					<label>Set stacked load delay (milliseconds)</label>

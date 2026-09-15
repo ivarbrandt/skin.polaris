@@ -117,6 +117,8 @@
 	</include>
 
 	<include name="HomeWallCommon">
+		<visible allowhiddenfocus="true">$PARAM[visible]</visible>
+		<animation effect="fade" time="300">Visible</animation>
 		<left>0</left>
 		<top>0</top>
 		<width>1424</width>
@@ -169,12 +171,11 @@
 	</include>
 
 	<include name="HomeWallFrame">
-		<animation effect="fade" time="300">Visible</animation>
-		<visible>$PARAM[visible]</visible>
 		<include content="BusyListSpinner">
 			<param name="list_id" value="$PARAM[list_id]"/>
 			<param name="posy" value="10"/>
 			<param name="posx" value="20"/>
+			<param name="visible" value="$PARAM[visible]"/>
 		</include>
 	</include>
 
@@ -189,6 +190,7 @@
 					<include content="HomeWallCommon">
 						<param name="list_id" value="$PARAM[list_id]"/>
 						<param name="row_id" value="$PARAM[row_id]"/>
+						<param name="visible" value="$PARAM[visible]"/>
 					</include>
 					<itemlayout width="283" height="409">
 						<control type="group">
@@ -239,6 +241,7 @@
 					<include content="HomeWallCommon">
 						<param name="list_id" value="$PARAM[list_id]"/>
 						<param name="row_id" value="$PARAM[row_id]"/>
+						<param name="visible" value="$PARAM[visible]"/>
 					</include>
 					<itemlayout width="235" height="337">
 						<control type="group">
@@ -289,6 +292,7 @@
 					<include content="HomeWallCommon">
 						<param name="list_id" value="$PARAM[list_id]"/>
 						<param name="row_id" value="$PARAM[row_id]"/>
+						<param name="visible" value="$PARAM[visible]"/>
 					</include>
 					<itemlayout width="474" height="286">
 						<control type="group">
@@ -341,6 +345,7 @@
 					<include content="HomeWallCommon">
 						<param name="list_id" value="$PARAM[list_id]"/>
 						<param name="row_id" value="$PARAM[row_id]"/>
+						<param name="visible" value="$PARAM[visible]"/>
 					</include>
 					<itemlayout width="353" height="214">
 						<control type="group">
@@ -394,6 +399,7 @@
 					<include content="HomeWallCommon">
 						<param name="list_id" value="$PARAM[list_id]"/>
 						<param name="row_id" value="$PARAM[row_id]"/>
+						<param name="visible" value="$PARAM[visible]"/>
 					</include>
 					<itemlayout width="283" height="330">
 						<control type="group">
@@ -450,6 +456,7 @@
 					<include content="HomeWallCommon">
 						<param name="list_id" value="$PARAM[list_id]"/>
 						<param name="row_id" value="$PARAM[row_id]"/>
+						<param name="visible" value="$PARAM[visible]"/>
 					</include>
 					<itemlayout width="354" height="178">
 						<control type="group">
@@ -503,6 +510,7 @@
 					<include content="HomeWallCommon">
 						<param name="list_id" value="$PARAM[list_id]"/>
 						<param name="row_id" value="$PARAM[row_id]"/>
+						<param name="visible" value="$PARAM[visible]"/>
 					</include>
 					<itemlayout width="474" height="339">
 						<control type="group">
@@ -541,158 +549,6 @@
 				</control>
 			</control>
 		</definition>
-	</include>
-
-	<include name="HomeWallsPrototype">
-		<control type="group" id="3000">
-			<visible>String.IsEqual(Container(9000).ListItem.Property(menu_id),3000)</visible>
-			<defaultcontrol>3002</defaultcontrol>
-			<include content="Section_Visible_Right_Delayed">
-				<param name="menu_id" value="3000"/>
-			</include>
-			<include content="HomeWallSectionSlide">
-				<param name="section_id" value="3000"/>
-			</include>
-			<include content="HomeWallHeader">
-				<param name="section_id" value="3000"/>
-				<param name="row_id" value="3002"/>
-			</include>
-			<control type="fixedlist" id="3002">
-				<include content="HomeWallTabRow">
-					<param name="row_id" value="3002"/>
-					<param name="walls_id" value="3003"/>
-				</include>
-				<content>
-					<item id="1">
-						<label>Finish watching</label>
-						<onclick>ActivateWindow(Videos,plugin://plugin.video.redlight/?mode=build_movie_list&amp;action=in_progress_movies&amp;category_name=Finish+watching,return)</onclick>
-						<property name="wall_id">$NUMBER[3011]</property>
-						<visible>Integer.IsGreater(Container(3011).NumItems,0) | Container(3011).IsUpdating</visible>
-					</item>
-					<item id="2">
-						<label>Trending</label>
-						<onclick>ActivateWindow(Videos,plugin://plugin.video.pov/?name=32458&amp;iconImage=trending.png&amp;mode=build_movie_list&amp;action=trakt_movies_trending,return)</onclick>
-						<property name="wall_id">$NUMBER[3012]</property>
-						<visible>Integer.IsGreater(Container(3012).NumItems,0) | Container(3012).IsUpdating</visible>
-					</item>
-					<item id="3">
-						<label>Recently Added Movies</label>
-						<onclick>ActivateWindow(Videos,plugin://plugin.video.redlight/?mode=build_movie_list&amp;action=trakt_collection_lists&amp;new_page=recent&amp;category_name=Recently+Added+Movies,return)</onclick>
-						<property name="wall_id">$NUMBER[3013]</property>
-						<visible>Integer.IsGreater(Container(3013).NumItems,0) | Container(3013).IsUpdating</visible>
-					</item>
-					<item id="4">
-						<label>Trending (Small Landscape)</label>
-						<onclick>ActivateWindow(Videos,plugin://plugin.video.redlight/?mode=build_movie_list&amp;action=trakt_movies_trending&amp;category_name=Trending,return)</onclick>
-						<property name="wall_id">$NUMBER[3014]</property>
-						<visible>Integer.IsGreater(Container(3014).NumItems,0) | Container(3014).IsUpdating</visible>
-					</item>
-					<item id="5">
-						<label>$LOCALIZE[1037]</label>
-						<onclick>ActivateWindow(1100,addons://sources/video/,return)</onclick>
-						<property name="wall_id">$NUMBER[3015]</property>
-						<visible>Integer.IsGreater(Container(3015).NumItems,0) | Container(3015).IsUpdating</visible>
-					</item>
-					<item id="6">
-						<label>$LOCALIZE[31148]</label>
-						<onclick>ActivateWindow(1100,addons://,return)</onclick>
-						<property name="wall_id">$NUMBER[3016]</property>
-						<visible>Integer.IsGreater(Container(3016).NumItems,0) | Container(3016).IsUpdating</visible>
-					</item>
-					<item id="7">
-						<label>$LOCALIZE[31016]</label>
-						<onclick>ActivateWindow(TVChannels)</onclick>
-						<property name="wall_id">$NUMBER[3017]</property>
-						<visible>Integer.IsGreater(Container(3017).NumItems,0) | Container(3017).IsUpdating</visible>
-					</item>
-					<item id="8">
-						<label>Up next</label>
-						<onclick>ActivateWindow(Videos,plugin://plugin.video.redlight/?mode=build_next_episode,return)</onclick>
-						<property name="wall_id">$NUMBER[3018]</property>
-						<visible>Integer.IsGreater(Container(3018).NumItems,0) | Container(3018).IsUpdating</visible>
-					</item>
-					<item id="9">
-						<label>Recently Added TV Shows</label>
-						<onclick>ActivateWindow(Videos,plugin://plugin.video.redlight/?mode=build_tvshow_list&amp;action=trakt_collection_lists&amp;new_page=recent&amp;category_name=Recently+Added+TV+Shows,return)</onclick>
-						<property name="wall_id">$NUMBER[3019]</property>
-						<visible>Integer.IsGreater(Container(3019).NumItems,0) | Container(3019).IsUpdating</visible>
-					</item>
-				</content>
-			</control>
-			<control type="group" id="3003">
-				<include content="HomeWallsGroup">
-					<param name="walls_id" value="3003"/>
-				</include>
-				<include content="HomeWallLandscape">
-					<param name="list_id" value="3011"/>
-					<param name="row_id" value="3002"/>
-					<param name="visible" value="Container(3002).HasFocus(1)"/>
-					<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_movie_list&amp;action=in_progress_movies&amp;category_name=Finish+watching"/>
-					<param name="widget_target" value="videos"/>
-				</include>
-				<include content="HomeWallSmallPoster">
-					<param name="list_id" value="3012"/>
-					<param name="row_id" value="3002"/>
-					<param name="visible" value="Container(3002).HasFocus(2)"/>
-					<param name="content_path" value="plugin://plugin.video.pov/?name=32458&amp;iconImage=trending.png&amp;mode=build_movie_list&amp;action=trakt_movies_trending"/>
-					<param name="widget_target" value="videos"/>
-				</include>
-				<include content="HomeWallPoster">
-					<param name="list_id" value="3013"/>
-					<param name="row_id" value="3002"/>
-					<param name="visible" value="Container(3002).HasFocus(3)"/>
-					<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_movie_list&amp;action=trakt_collection_lists&amp;new_page=recent&amp;category_name=Recently+Added+Movies"/>
-					<param name="widget_target" value="videos"/>
-				</include>
-				<include content="HomeWallSmallLandscape">
-					<param name="list_id" value="3014"/>
-					<param name="row_id" value="3002"/>
-					<param name="visible" value="Container(3002).HasFocus(4)"/>
-					<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_movie_list&amp;action=trakt_movies_trending&amp;category_name=Trending"/>
-					<param name="widget_target" value="videos"/>
-				</include>
-				<include content="HomeWallSquare">
-					<param name="list_id" value="3015"/>
-					<param name="row_id" value="3002"/>
-					<param name="visible" value="Container(3002).HasFocus(5)"/>
-					<param name="content_path" value="addons://sources/video/"/>
-					<param name="widget_target" value="videos"/>
-					<param name="sortby" value="lastused"/>
-					<param name="sortorder" value="descending"/>
-					<param name="fallback_icon" value="DefaultAddon.png"/>
-				</include>
-				<include content="HomeWallCategory">
-					<param name="list_id" value="3016"/>
-					<param name="row_id" value="3002"/>
-					<param name="visible" value="Container(3002).HasFocus(6)"/>
-					<param name="content_path" value="addons://"/>
-					<param name="widget_target" value="addonbrowser"/>
-				</include>
-				<include content="HomeWallPVR">
-					<param name="list_id" value="3017"/>
-					<param name="row_id" value="3002"/>
-					<param name="visible" value="Container(3002).HasFocus(7)"/>
-					<param name="content_path" value="pvr://channels/tv/*?view=lastplayed"/>
-					<param name="widget_target" value="tvchannels"/>
-					<param name="sortby" value="lastplayed"/>
-					<param name="sortorder" value="descending"/>
-				</include>
-				<include content="HomeWallLandscape">
-					<param name="list_id" value="3018"/>
-					<param name="row_id" value="3002"/>
-					<param name="visible" value="Container(3002).HasFocus(8)"/>
-					<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_next_episode"/>
-					<param name="widget_target" value="videos"/>
-				</include>
-				<include content="HomeWallLandscape">
-					<param name="list_id" value="3019"/>
-					<param name="row_id" value="3002"/>
-					<param name="visible" value="Container(3002).HasFocus(9)"/>
-					<param name="content_path" value="plugin://plugin.video.redlight/?mode=build_tvshow_list&amp;action=trakt_collection_lists&amp;new_page=recent&amp;category_name=Recently+Added+TV+Shows"/>
-					<param name="widget_target" value="videos"/>
-				</include>
-			</control>
-		</control>
 	</include>
 
 </includes>

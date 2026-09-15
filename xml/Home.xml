@@ -98,8 +98,7 @@
 						</include>
 					</control>
 				</control>
-				<include condition="!Skin.HasSetting(Dev.HomeWalls)">HomeWidgetGroups</include>
-				<include condition="Skin.HasSetting(Dev.HomeWalls)">HomeWallsPrototype</include>
+				<include>HomeWalls</include>
 				<control type="group" id="15000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
 					<include content="Visible_Right_Delayed">
