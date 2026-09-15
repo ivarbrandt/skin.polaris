@@ -221,7 +221,7 @@
 						<onfocus>ClearProperty(FlixWidget,Home)</onfocus>
 						<onfocus>ClearProperty(FeatureWidgetFocused,Home)</onfocus>
 						<onfocus>ClearProperty(altus_stacked_linked_list_id,Home)</onfocus>
-						<onright>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
+						<onright condition="String.IsEmpty(Container(9000).ListItem.Property(no_walls))">SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
 						<onleft>SetFocus($INFO[Container(9000).ListItem.Property(submenu_id)])</onleft>
 						<onback>700</onback>
 						<onup>700</onup>
