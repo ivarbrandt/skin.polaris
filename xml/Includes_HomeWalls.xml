@@ -77,7 +77,6 @@
 		<scrolltime tween="cubic" easing="out">400</scrolltime>
 		<onfocus>ClearProperty(FlixWidget,Home)</onfocus>
 		<onfocus>ClearProperty(FeatureWidgetFocused,Home)</onfocus>
-		<onfocus>ClearProperty(altus_stacked_linked_list_id,home)</onfocus>
 		<onleft>9000</onleft>
 		<onright>$PARAM[row_id]</onright>
 		<onup>$PARAM[row_id]</onup>
@@ -120,9 +119,6 @@
 		<orientation>vertical</orientation>
 		<scrolltime tween="cubic" easing="out">600</scrolltime>
 		<preloaditems>1</preloaditems>
-		<!-- <onfocus>ClearProperty(FlixWidget,Home)</onfocus>
-		<onfocus>ClearProperty(FeatureWidgetFocused,Home)</onfocus>
-		<onfocus>ClearProperty(altus_stacked_linked_list_id,home)</onfocus> -->
 		<onup>SetFocus($PARAM[list_id],0,absolute)</onup>
 		<onup>SetFocus($PARAM[row_id])</onup>
 		<onleft condition="!String.IsEqual(Skin.String(onLeftSetting.Home),1)">9000</onleft>
