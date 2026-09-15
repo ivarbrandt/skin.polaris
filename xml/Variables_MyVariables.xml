@@ -557,7 +557,7 @@
 	</variable>
 
 	<variable name="OnBackSettingVar">
-    <value condition="String.IsEqual(Skin.String(onBackSetting),0)">Open main menu</value>
+    <value condition="String.IsEqual(Skin.String(onBackSetting),0)">Open search panel</value>
     <value condition="String.IsEqual(Skin.String(onBackSetting),1)">Reset widget</value>
     <value condition="String.IsEqual(Skin.String(onBackSetting),2)">Both</value>
 	</variable>
@@ -570,7 +570,7 @@
 	</variable>
 
 	<variable name="OnLeftSettingVar">
-	<value condition="String.IsEqual(Skin.String(onLeftSetting),0)">Open main menu</value>
+	<value condition="String.IsEqual(Skin.String(onLeftSetting),0)">Open search panel</value>
 	<value condition="String.IsEqual(Skin.String(onLeftSetting),1)">Wrap to end</value>
 	</variable>
 
@@ -578,6 +578,26 @@
     <value condition="String.IsEqual(Skin.String(onLeftSetting),0) + String.IsEqual(Skin.String(onBackSetting),0)">Skin.SetString(onLeftSetting,1)</value>
     <value condition="String.IsEqual(Skin.String(onLeftSetting),1)">Skin.SetString(onLeftSetting,0)</value>
     <value condition="String.IsEqual(Skin.String(onLeftSetting),0) + String.IsEqual(Skin.String(onBackSetting),2)">Skin.SetString(onLeftSetting,1)</value>
+	</variable>
+
+	<variable name="HomeOnBackSettingVar">
+		<value condition="String.IsEqual(Skin.String(onBackSetting.Home),1)">Open main menu</value>
+		<value>Open tab row</value>
+	</variable>
+
+	<variable name="HomeOnBackSettingToggleVar">
+		<value condition="String.IsEqual(Skin.String(onBackSetting.Home),1)">Skin.SetString(onBackSetting.Home,0)</value>
+		<value>Skin.SetString(onBackSetting.Home,1)</value>
+	</variable>
+
+	<variable name="HomeOnLeftSettingVar">
+		<value condition="String.IsEqual(Skin.String(onLeftSetting.Home),1)">Wrap to end of row</value>
+		<value>Open main menu</value>
+	</variable>
+
+	<variable name="HomeOnLeftSettingToggleVar">
+		<value condition="String.IsEqual(Skin.String(onLeftSetting.Home),1)">Skin.SetString(onLeftSetting.Home,0)</value>
+		<value>Skin.SetString(onLeftSetting.Home,1)</value>
 	</variable>
 
 	<variable name="OSDAudioButtonSettingVar">

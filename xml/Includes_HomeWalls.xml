@@ -124,17 +124,18 @@
 		<orientation>vertical</orientation>
 		<scrolltime tween="cubic" easing="out">600</scrolltime>
 		<preloaditems>1</preloaditems>
-		<onfocus>ClearProperty(FlixWidget,Home)</onfocus>
+		<!-- <onfocus>ClearProperty(FlixWidget,Home)</onfocus>
 		<onfocus>ClearProperty(FeatureWidgetFocused,Home)</onfocus>
-		<onfocus>ClearProperty(altus_stacked_linked_list_id,home)</onfocus>
+		<onfocus>ClearProperty(altus_stacked_linked_list_id,home)</onfocus> -->
 		<onup>SetFocus($PARAM[list_id],0,absolute)</onup>
 		<onup>SetFocus($PARAM[row_id])</onup>
-		<onleft>SetFocus($PARAM[list_id],0,absolute)</onleft>
-		<onleft>SetFocus(9000)</onleft>
+		<onleft condition="!String.IsEqual(Skin.String(onLeftSetting.Home),1)">9000</onleft>
+		<onleft condition="String.IsEqual(Skin.String(onLeftSetting.Home),1)">$PARAM[list_id]</onleft>
 		<onright>$PARAM[list_id]</onright>
 		<onback condition="Player.HasMedia + !String.IsEmpty(Skin.String(TrailerPlaying))">Stop</onback>
 		<onback>SetFocus($PARAM[list_id],0,absolute)</onback>
-		<onback>SetFocus($PARAM[row_id])</onback>
+		<onback condition="!String.IsEqual(Skin.String(onBackSetting.Home),1)">$PARAM[row_id]</onback>
+		<onback condition="String.IsEqual(Skin.String(onBackSetting.Home),1)">9000</onback>
 		<onunfocus condition="Player.HasMedia + !String.IsEmpty(Skin.String(TrailerPlaying))">Stop</onunfocus>
 		<onunfocus condition="!String.IsEmpty(Skin.String(TrailerPlaying))">Skin.Reset(TrailerPlaying)</onunfocus>
 	</include>

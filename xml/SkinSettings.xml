@@ -96,16 +96,28 @@
 					<onclick>Skin.ToggleSetting(OneClickClose)</onclick>
 					<selected>Skin.HasSetting(OneClickClose)</selected>
 				</control>
-				<!-- HOMESCREEN ON BACK -->
-				<control type="button" id="63702">
+				<control type="button" id="63713">
 					<label>Home screen on back action</label>
+					<label2>$VAR[HomeOnBackSettingVar]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>$VAR[HomeOnBackSettingToggleVar]</onclick>
+				</control>
+				<control type="button" id="63714">
+					<label>Home screen on left action</label>
+					<label2>$VAR[HomeOnLeftSettingVar]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>$VAR[HomeOnLeftSettingToggleVar]</onclick>
+				</control>
+				<!-- SEARCH WINDOW ON BACK -->
+				<control type="button" id="63702">
+					<label>Search window on back action</label>
 					<label2>$VAR[OnBackSettingVar]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>$VAR[OnBackSettingToggleVar]</onclick>
 				</control>
-				<!-- HOMESCREEN ON LEFT -->
+				<!-- SEARCH WINDOW ON LEFT -->
 				<control type="button" id="63703">
-					<label>Home screen on left action</label>
+					<label>Search window on left action</label>
 					<label2>$VAR[OnLeftSettingVar]</label2>
 					<include>DefaultSettingButton</include>
 					<onclick>$VAR[OnLeftSettingToggleVar]</onclick>
