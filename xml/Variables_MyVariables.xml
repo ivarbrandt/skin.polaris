@@ -950,8 +950,6 @@
 		<value condition="Window.IsVisible(tvguide)">73FFFFFF</value>
 		<value condition="Window.IsVisible(tvchannels) | Window.IsVisible(tvtimers) | Window.IsVisible(tvsearch)">$VAR[BlurBrightnessVar]</value>
 		<value condition="$EXP[isPosterFlow]">73FFFFFF</value>
-		<value condition="[Window.IsVisible(Home) | Window.IsVisible(1121)] + String.IsEmpty(Window(Home).Property(FlixWidget))">$VAR[BlurBrightnessVar]</value>
-		<value condition="[Window.IsVisible(Home) | Window.IsVisible(1121)] + !String.IsEmpty(Window(Home).Property(FlixWidget))">59FFFFFF</value>
 		<value>$VAR[BlurBrightnessVar]</value>
 	</variable>
 

@@ -205,9 +205,7 @@
 						<top>180</top>
 						<width>428</width>
 						<height>840</height>
-						<onfocus>ClearProperty(FlixWidget,Home)</onfocus>
 						<onfocus>ClearProperty(listposition,home)</onfocus>
-						<onfocus>ClearProperty(altus_saved_list_id,Home)</onfocus>
 						<onfocus>ClearProperty(altus_stacked_linked_list_id,Home)</onfocus>
 						<onleft>9000</onleft>
 						<onright condition="!String.IsEmpty(Window(home).Property(altus.search.input))">SetFocus(2000)</onright>

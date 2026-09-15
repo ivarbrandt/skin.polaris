@@ -21,19 +21,6 @@
 		</control> -->
 		<include>DefaultBackground</include>
 		<include>PlayerLogoProcessor</include>
-		<control type="image" id="100000">
-			<top>-2</top>
-			<right>-2</right>
-			<width>1427</width>
-			<height>803</height>
-			<fadetime>500</fadetime>
-			<bordersize>2</bordersize>
-			<texture border="2" colordiffuse="artwork_dim" background="true" diffuse="overlays/flixinfo-fanartdiffuse.png" fallback="$VAR[AltusCustomBackgroundImage]">$VAR[MediaFanartVar]</texture>
-			<aspectratio align="right" aligny="top">stretch</aspectratio>
-			<bordertexture colordiffuse="$VAR[FocusColorTheme]" infill="false">overlays/flixinfo-fanartdiffuse_border.png</bordertexture>
-			<include>ArtworkAnimations</include>
-			<visible>[![Player.HasVideo | [Player.HasAudio + Visualisation.Enabled + !String.IsEmpty(Visualisation.Name)]] | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))] + !Window.IsVisible(movieinformation) + !String.IsEmpty(Window(Home).Property(FlixWidget))</visible>
-		</control>
 		<control type="multiimage" id="100000">
 			<include>FullScreenDimensions</include>
 			<include>ArtworkAnimations</include>
@@ -218,7 +205,6 @@
 						<height>850</height>
 						<onfocus>ClearProperty(listposition,home)</onfocus>
 						<!-- <onfocus>SetProperty(fenlight.default_addon_fanart,,home)</onfocus> -->
-						<onfocus>ClearProperty(FlixWidget,Home)</onfocus>
 						<onfocus>ClearProperty(FeatureWidgetFocused,Home)</onfocus>
 						<onright condition="String.IsEmpty(Container(9000).ListItem.Property(no_walls))">SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
 						<onleft>SetFocus($INFO[Container(9000).ListItem.Property(submenu_id)])</onleft>

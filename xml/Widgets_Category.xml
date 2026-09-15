@@ -27,19 +27,13 @@
 				<movement>4</movement>
 				<onright>$PARAM[list_id]</onright>
 				<onfocus>RunScript(script.altus.helper,mode=widget_monitor&amp;list_id=$PARAM[list_id])</onfocus>
-				<onfocus>SetProperty(altus_saved_list_id,$PARAM[list_id],home)</onfocus>
 				<onfocus>SetProperty(altus_child_id,$PARAM[child_id],home)</onfocus>
-				<onfocus>ClearProperty(FlixWidget,Home)</onfocus>
 				<onfocus>ClearProperty(FeatureWidgetFocused,Home)</onfocus>
-				<onfocus>ClearProperty(altus_flix_linked_list_id,home)</onfocus>
 				<onfocus>ClearProperty(altus_stacked_linked_list_id,home)</onfocus>
 				<include content="WidgetListCommonStacked">
 					<param name="list_id" value="$PARAM[list_id]"/>
 				</include>
 				<!-- <animation effect="slide" end="7,0" time="300" condition="Control.HasFocus($PARAM[list_id])">Conditional</animation> -->
-				<animation condition="!String.IsEmpty(Window(Home).Property(FlixWidget)) + Integer.IsEqual($PARAM[list_id],Window(Home).Property(altus_flix_linked_list_id))" reversible="false">
-					<effect type="fade" start="100" end="0" time="400" />
-				</animation>
 				<!-- <visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible> -->
 				<visible>$PARAM[filter_visible]</visible>
 				<itemlayout width="271" height="393" infoupdate="30">

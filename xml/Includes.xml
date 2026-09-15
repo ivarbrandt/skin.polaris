@@ -37,9 +37,6 @@
 	<include file="Widgets_Weather.xml" />
 	<include file="Widgets_Square.xml" />
 	<include file="Widgets_Category.xml" />
-	<include file="Widgets_SmallPosterFlix.xml" />
-	<include file="Widgets_SmallLandscapeFlix.xml" />
-	<include file="Widgets_LandscapeFlix.xml" />
 	<include file="Layouts_Category.xml" />
 	<include file="Layouts_PVR.xml" />
 	<include file="Layouts_SmallSquare.xml" />

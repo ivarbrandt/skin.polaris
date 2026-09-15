@@ -75,7 +75,6 @@
 		<focusposition>0</focusposition>
 		<movement>4</movement>
 		<scrolltime tween="cubic" easing="out">400</scrolltime>
-		<onfocus>ClearProperty(FlixWidget,Home)</onfocus>
 		<onfocus>ClearProperty(FeatureWidgetFocused,Home)</onfocus>
 		<onleft>9000</onleft>
 		<onright>$PARAM[row_id]</onright>
