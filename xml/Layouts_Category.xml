@@ -4,6 +4,7 @@
   <include name="WidgetListCategoryLayout">
 		<!-- <param name="item_limit">30</param> -->
 		<param name="icon">$INFO[ListItem.Icon]</param>
+		<param name="fallback_icon">DefaultFolder.png</param>
 		<param name="focused">false</param>
 		<definition>
 			<control type="group">
@@ -26,12 +27,12 @@
 					<height>90</height>
 					<visible>!$EXP[isContent]</visible>
 					<control type="image">
-						<texture colordiffuse="$VAR[IconDiffuse]" background="true">$PARAM[icon]</texture>
+						<texture colordiffuse="$VAR[IconDiffuse]" fallback="$PARAM[fallback_icon]" background="true">$PARAM[icon]</texture>
 						<aspectratio aligny="bottom" align="center">scale</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
 					</control>
 					<control type="image">
-						<texture colordiffuse="unfocused_text" background="true">$PARAM[icon]</texture>
+						<texture colordiffuse="unfocused_text" fallback="$PARAM[fallback_icon]" background="true">$PARAM[icon]</texture>
 						<aspectratio aligny="bottom" align="center">scale</aspectratio>
 						<visible>![$PARAM[focused] + Control.HasFocus($PARAM[list_id])]</visible>
 					</control>
