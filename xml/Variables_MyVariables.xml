@@ -36,6 +36,11 @@
 		<value>[COLOR unfocused_text]$INFO[Container(57).ListItem.Plot][/COLOR]</value>
   </variable>
 
+	<variable name="CategoryIcon">
+		<value condition="$EXP[isContent]">$VAR[ClearlogoVar]</value>
+		<value>$INFO[ListItem.Icon]</value>
+  </variable>
+	
 	<variable name="InfoBadgeSeasonTitle">
 		<value condition="$EXP[isSeasonView]">$INFO[Container(5057).ListItem.Title]</value>
 		<value>$INFO[Container($PARAM[list_id]).ListItem.TVShowTitle]</value>

@@ -3,7 +3,7 @@
 
   <include name="WidgetListCategoryLayout">
 		<!-- <param name="item_limit">30</param> -->
-		<param name="icon">$INFO[ListItem.Icon]</param>
+		<param name="icon">$VAR[CategoryIcon]</param>
 		<param name="fallback_icon">DefaultFolder.png</param>
 		<param name="focused">false</param>
 		<definition>
@@ -18,6 +18,7 @@
 				<control type="image">
 					<texture border="20" colordiffuse="$VAR[FocusColorTheme]">masks/radius_20.png</texture>
 					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
+					<visible>!$EXP[isContent]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="group">
@@ -40,9 +41,29 @@
 				<control type="image">
 					<centertop>50%</centertop>
 					<centerleft>50%</centerleft>
+					<width>258</width>
+					<height>100</height>
 					<texture colordiffuse="artwork_dim" background="true">$PARAM[icon]</texture>
-					<!-- <aspectratio scalediffuse="false">scale</aspectratio> -->
+					<aspectratio>keep</aspectratio>
 					<visible>$EXP[isContent]</visible>
+				</control>
+				<control type="label">
+					<centerleft>50%</centerleft>
+					<width>280</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>unfocused_text</textcolor>
+					<font>font25</font>
+					<scroll>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</scroll>
+					<scrollspeed>50</scrollspeed>
+					<visible>$EXP[isContent] + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))</visible>
+				</control>
+				<control type="image">
+					<texture border="20" colordiffuse="$VAR[FocusColorTheme]" infill="false">masks/bordertexture-20.png</texture>
+					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
+					<visible>$EXP[isContent]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
 				<control type="label">
 					<centerleft>50%</centerleft>

@@ -445,7 +445,7 @@
 	</include>
 
 	<include name="HomeWallCategory">
-		<param name="icon">$INFO[ListItem.Icon]</param>
+		<param name="icon">$VAR[CategoryIcon]</param>
 		<definition>
 			<control type="group">
 				<include content="HomeWallFrame">
