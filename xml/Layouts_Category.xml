@@ -17,7 +17,7 @@
 				</control>
 				<control type="image">
 					<texture border="20" colordiffuse="$VAR[FocusColorTheme]">masks/radius_20.png</texture>
-					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
+					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id]) + Integer.IsEqual(ListItem.CurrentItem,Container($PARAM[list_id]).CurrentItem)</visible>
 					<visible>!$EXP[isContent]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
@@ -30,12 +30,12 @@
 					<control type="image">
 						<texture colordiffuse="$VAR[IconDiffuse]" fallback="$PARAM[fallback_icon]" background="true">$PARAM[icon]</texture>
 						<aspectratio aligny="bottom" align="center">scale</aspectratio>
-						<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
+						<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id]) + Integer.IsEqual(ListItem.CurrentItem,Container($PARAM[list_id]).CurrentItem)</visible>
 					</control>
 					<control type="image">
 						<texture colordiffuse="unfocused_text" fallback="$PARAM[fallback_icon]" background="true">$PARAM[icon]</texture>
 						<aspectratio aligny="bottom" align="center">scale</aspectratio>
-						<visible>![$PARAM[focused] + Control.HasFocus($PARAM[list_id])]</visible>
+						<visible>![$PARAM[focused] + Control.HasFocus($PARAM[list_id]) + Integer.IsEqual(ListItem.CurrentItem,Container($PARAM[list_id]).CurrentItem)]</visible>
 					</control>
 				</control>
 				<control type="image">
@@ -61,7 +61,7 @@
 				</control>
 				<control type="image">
 					<texture border="20" colordiffuse="$VAR[FocusColorTheme]" infill="false">masks/bordertexture-20.png</texture>
-					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
+					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id]) + Integer.IsEqual(ListItem.CurrentItem,Container($PARAM[list_id]).CurrentItem)</visible>
 					<visible>$EXP[isContent]</visible>
 					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 				</control>
@@ -79,7 +79,7 @@
 					<scroll>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</scroll>
 					<scrollspeed>50</scrollspeed>
 					<visible>!$EXP[isContent]</visible>
-					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</visible>
+					<visible>$PARAM[focused] + Control.HasFocus($PARAM[list_id]) + Integer.IsEqual(ListItem.CurrentItem,Container($PARAM[list_id]).CurrentItem)</visible>
 				</control>
 				<control type="label">
 					<centerleft>50%</centerleft>
@@ -95,7 +95,7 @@
 					<scroll>$PARAM[focused] + Control.HasFocus($PARAM[list_id])</scroll>
 					<scrollspeed>50</scrollspeed>
 					<visible>!$EXP[isContent]</visible>
-					<visible>![$PARAM[focused] + Control.HasFocus($PARAM[list_id])]</visible>
+					<visible>![$PARAM[focused] + Control.HasFocus($PARAM[list_id]) + Integer.IsEqual(ListItem.CurrentItem,Container($PARAM[list_id]).CurrentItem)]</visible>
 				</control>
 			</control>
 		</definition>
