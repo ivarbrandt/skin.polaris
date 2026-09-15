@@ -148,12 +148,27 @@
 		</animation>
 	</include>
 
+	<include name="HomeWallFocusAnimations">
+		<animation type="Focus" condition="Skin.HasSetting(Enable.HomeWallsDim) + Control.HasFocus($PARAM[list_id]) + String.IsEqual(Skin.String(BackgroundSetting),1)" reversible="false">
+			<effect type="fadediffuse" start="FF777777" end="FFFFFFFF" time="300" />
+		</animation>
+		<animation type="Unfocus" condition="Skin.HasSetting(Enable.HomeWallsDim) + Control.HasFocus($PARAM[list_id]) + String.IsEqual(Skin.String(BackgroundSetting),1)" reversible="false">
+			<effect type="fadediffuse" start="FFFFFFFF" end="FF777777" time="300" />
+		</animation>
+		<animation type="Focus" condition="Skin.HasSetting(Enable.HomeWallsDim) + Control.HasFocus($PARAM[list_id]) + [String.IsEqual(Skin.String(BackgroundSetting),0) | String.IsEqual(Skin.String(BackgroundSetting),2)]" reversible="false">
+			<effect type="fade" start="50" end="100" time="300" tween="sine" easing="inout" />
+		</animation>
+		<animation type="Unfocus" condition="Skin.HasSetting(Enable.HomeWallsDim) + Control.HasFocus($PARAM[list_id]) + [String.IsEqual(Skin.String(BackgroundSetting),0) | String.IsEqual(Skin.String(BackgroundSetting),2)]" reversible="false">
+			<effect type="fade" start="100" end="50" time="300" tween="sine" easing="inout" />
+		</animation>
+	</include>
+
 	<include name="HomeWallContent">
 		<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="$PARAM[limit]">$PARAM[content_path]</content>
 	</include>
 
 	<include name="HomeWallFrame">
-		<animation effect="fade" time="200">Visible</animation>
+		<animation effect="fade" time="300">Visible</animation>
 		<visible>$PARAM[visible]</visible>
 		<include content="BusyListSpinner">
 			<param name="list_id" value="$PARAM[list_id]"/>
@@ -187,10 +202,15 @@
 					<focusedlayout width="283" height="409" infoupdate="30">
 						<control type="group">
 							<depth>DepthContentPopout</depth>
-							<include content="PosterLayout">
-								<param name="focused" value="true"/>
-								<param name="list_id" value="$PARAM[list_id]"/>
-							</include>
+							<control type="group">
+								<include content="HomeWallFocusAnimations">
+									<param name="list_id" value="$PARAM[list_id]"/>
+								</include>
+								<include content="PosterLayout">
+									<param name="focused" value="true"/>
+									<param name="list_id" value="$PARAM[list_id]"/>
+								</include>
+							</control>
 							<include>FocusBounce</include>
 							<include>VideoTrailerControl</include>
 						</control>
@@ -232,10 +252,15 @@
 					<focusedlayout width="235" height="337" infoupdate="30">
 						<control type="group">
 							<depth>DepthContentPopout</depth>
-							<include content="SmallPosterLayout">
-								<param name="focused" value="true"/>
-								<param name="list_id" value="$PARAM[list_id]"/>
-							</include>
+							<control type="group">
+								<include content="HomeWallFocusAnimations">
+									<param name="list_id" value="$PARAM[list_id]"/>
+								</include>
+								<include content="SmallPosterLayout">
+									<param name="focused" value="true"/>
+									<param name="list_id" value="$PARAM[list_id]"/>
+								</include>
+							</control>
 							<include>FocusBounce</include>
 							<include>VideoTrailerControl</include>
 						</control>
@@ -279,10 +304,15 @@
 						<control type="group">
 							<depth>DepthContentPopout</depth>
 							<left>-2</left>
-							<include content="LandscapeLayout">
-								<param name="focused" value="true"/>
-								<param name="list_id" value="$PARAM[list_id]"/>
-							</include>
+							<control type="group">
+								<include content="HomeWallFocusAnimations">
+									<param name="list_id" value="$PARAM[list_id]"/>
+								</include>
+								<include content="LandscapeLayout">
+									<param name="focused" value="true"/>
+									<param name="list_id" value="$PARAM[list_id]"/>
+								</include>
+							</control>
 							<include>FocusBounce</include>
 							<include>VideoTrailerControl</include>
 						</control>
@@ -326,10 +356,15 @@
 						<control type="group">
 							<depth>DepthContentPopout</depth>
 							<left>2</left>
-							<include content="SmallLandscapeLayout">
-								<param name="focused" value="true"/>
-								<param name="list_id" value="$PARAM[list_id]"/>
-							</include>
+							<control type="group">
+								<include content="HomeWallFocusAnimations">
+									<param name="list_id" value="$PARAM[list_id]"/>
+								</include>
+								<include content="SmallLandscapeLayout">
+									<param name="focused" value="true"/>
+									<param name="list_id" value="$PARAM[list_id]"/>
+								</include>
+							</control>
 							<include>FocusBounce</include>
 							<include>VideoTrailerControl</include>
 						</control>
@@ -376,12 +411,17 @@
 						<control type="group">
 							<depth>DepthContentPopout</depth>
 							<top>11</top>
-							<include content="SmallSquareLayout">
-								<param name="fallback_icon" value="$PARAM[fallback_icon]"/>
-								<param name="single_label" value="$INFO[ListItem.Label]"/>
-								<param name="list_id" value="$PARAM[list_id]"/>
-								<param name="focused" value="true"/>
-							</include>
+							<control type="group">
+								<include content="HomeWallFocusAnimations">
+									<param name="list_id" value="$PARAM[list_id]"/>
+								</include>
+								<include content="SmallSquareLayout">
+									<param name="fallback_icon" value="$PARAM[fallback_icon]"/>
+									<param name="single_label" value="$INFO[ListItem.Label]"/>
+									<param name="list_id" value="$PARAM[list_id]"/>
+									<param name="focused" value="true"/>
+								</include>
+							</control>
 							<include>FocusBounce</include>
 						</control>
 					</focusedlayout>
@@ -426,11 +466,16 @@
 						<control type="group">
 							<depth>DepthContentPopout</depth>
 							<top>-15</top>
-							<include content="WidgetListCategoryLayout">
-								<param name="list_id" value="$PARAM[list_id]"/>
-								<param name="icon" value="$PARAM[icon]"/>
-								<param name="focused" value="true"/>
-							</include>
+							<control type="group">
+								<include content="HomeWallFocusAnimations">
+									<param name="list_id" value="$PARAM[list_id]"/>
+								</include>
+								<include content="WidgetListCategoryLayout">
+									<param name="list_id" value="$PARAM[list_id]"/>
+									<param name="icon" value="$PARAM[icon]"/>
+									<param name="focused" value="true"/>
+								</include>
+							</control>
 							<include>FocusBounce</include>
 						</control>
 					</focusedlayout>
@@ -473,10 +518,15 @@
 						<control type="group">
 							<depth>DepthContentPopout</depth>
 							<top>-15</top>
-							<include content="WidgetListPVRLayout">
-								<param name="list_id" value="$PARAM[list_id]"/>
-								<param name="focused" value="true"/>
-							</include>
+							<control type="group">
+								<include content="HomeWallFocusAnimations">
+									<param name="list_id" value="$PARAM[list_id]"/>
+								</include>
+								<include content="WidgetListPVRLayout">
+									<param name="list_id" value="$PARAM[list_id]"/>
+									<param name="focused" value="true"/>
+								</include>
+							</control>
 							<include>FocusBounce</include>
 						</control>
 					</focusedlayout>
