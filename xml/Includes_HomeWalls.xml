@@ -4,29 +4,16 @@
 	<include name="HomeWallHeader">
 		<control type="group">
 			<left>15</left>
-			<top>72</top>
+			<top>22</top>
 			<height>50</height>
 			<width>1180</width>
+			<visible>ControlGroup($PARAM[section_id]).HasFocus + !Control.HasFocus($PARAM[row_id])</visible>
+			<animation effect="fade" time="200">VisibleChange</animation>
 			<include content="FocusedCategoryLabel">
 				<param name="id" value=""/>
 				<param name="label" value="$VAR[HomescreenFlixCrumbs][COLOR unfocused_text]$INFO[Container($PARAM[row_id]).ListItem.Label][/COLOR]$VAR[HomeFlixCrumbsVar]"/>
-				<param name="visible" value="ControlGroup($PARAM[section_id]).HasFocus"/>
+				<param name="visible" value="true"/>
 			</include>
-			<include content="UnfocusedCategoryLabel">
-				<param name="id" value=""/>
-				<param name="label" value="[COLOR unfocused_text]$INFO[Container($PARAM[row_id]).ListItem.Label][/COLOR]"/>
-				<param name="visible" value="!ControlGroup($PARAM[section_id]).HasFocus"/>
-			</include>
-			<control type="label">
-				<align>right</align>
-				<right>-205</right>
-				<label>$INFO[System.Time]</label>
-				<font>font30_title</font>
-				<textcolor>unfocused_text</textcolor>
-				<shadowcolor>text_shadow</shadowcolor>
-				<visible>ControlGroup($PARAM[section_id]).HasFocus</visible>
-				<animation effect="fade" time="100">Visible</animation>
-			</control>
 		</control>
 	</include>
 
@@ -40,6 +27,11 @@
 				<height>87</height>
 				<control type="image">
 					<texture border="20" colordiffuse="4D000000">masks/radius_20.png</texture>
+				</control>
+				<control type="image">
+					<texture border="20" colordiffuse="80000000">masks/radius_20.png</texture>
+					<visible>!ControlGroup($PARAM[walls_id]).HasFocus + ![$PARAM[focused] + Control.HasFocus($PARAM[row_id])]</visible>
+					<visible>[!Skin.HasSetting(HomeWalls.ManualLoading) + $PARAM[focused]] | [Skin.HasSetting(HomeWalls.ManualLoading) + [String.IsEqual(Window(Home).Property(altus_wall_$PARAM[row_id]),ListItem.Property(wall_id)) | [String.IsEmpty(Window(Home).Property(altus_wall_$PARAM[row_id])) + Integer.IsEqual(ListItem.CurrentItem,1)]]]</visible>
 				</control>
 				<control type="image">
 					<texture border="20" colordiffuse="$VAR[FocusColorTheme]">masks/radius_20.png</texture>
@@ -76,7 +68,7 @@
 	</include>
 
 	<include name="HomeWallTabRow">
-		<top>107</top>
+		<top>57</top>
 		<width>1424</width>
 		<height>140</height>
 		<orientation>horizontal</orientation>
@@ -89,7 +81,7 @@
 		<onleft>9000</onleft>
 		<onright>$PARAM[row_id]</onright>
 		<onup>$PARAM[row_id]</onup>
-		<ondown>SetFocus($INFO[Container($PARAM[row_id]).ListItem.Property(wall_id)],0,absolute)</ondown>
+		<ondown condition="Skin.HasSetting(HomeWalls.ManualLoading)">SetProperty(altus_wall_$PARAM[row_id],$INFO[Container($PARAM[row_id]).ListItem.Property(wall_id)],home)</ondown>		<ondown>SetFocus($INFO[Container($PARAM[row_id]).ListItem.Property(wall_id)],0,absolute)</ondown>
 		<onback>9000</onback>
 		<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="ControlGroup($PARAM[walls_id]).HasFocus">Conditional</animation>
 		<itemlayout width="283" height="140" infoupdate="30">
@@ -107,13 +99,15 @@
 		</focusedlayout>
 	</include>
 
-	<include name="HomeWallSectionSlide">
-		<animation effect="slide" start="0,0" end="0,-50" time="400" tween="cubic" easing="out" condition="ControlGroup($PARAM[section_id]).HasFocus" reversible="true">Conditional</animation>
-	</include>
-
 	<include name="HomeWallsGroup">
-		<top>243</top>
+		<top>193</top>
 		<animation effect="slide" start="0,0" end="0,-121" time="400" tween="cubic" easing="inout" condition="ControlGroup($PARAM[walls_id]).HasFocus" reversible="true">Conditional</animation>
+		<animation condition="Skin.HasSetting(HomeWalls.ManualLoading) + Control.HasFocus($PARAM[row_id]) + [[String.IsEmpty(Window(Home).Property(altus_wall_$PARAM[row_id])) + !String.IsEqual(Container($PARAM[row_id]).ListItemAbsolute(0).Property(wall_id),Container($PARAM[row_id]).ListItem.Property(wall_id))] | [!String.IsEmpty(Window(Home).Property(altus_wall_$PARAM[row_id])) + !String.IsEqual(Window(Home).Property(altus_wall_$PARAM[row_id]),Container($PARAM[row_id]).ListItem.Property(wall_id))]] + String.IsEqual(Skin.String(BackgroundSetting),1)" reversible="true">
+			<effect type="fadediffuse" start="FFFFFFFF" end="FF777777" time="300" />
+		</animation>
+		<animation condition="Skin.HasSetting(HomeWalls.ManualLoading) + Control.HasFocus($PARAM[row_id]) + [[String.IsEmpty(Window(Home).Property(altus_wall_$PARAM[row_id])) + !String.IsEqual(Container($PARAM[row_id]).ListItemAbsolute(0).Property(wall_id),Container($PARAM[row_id]).ListItem.Property(wall_id))] | [!String.IsEmpty(Window(Home).Property(altus_wall_$PARAM[row_id])) + !String.IsEqual(Window(Home).Property(altus_wall_$PARAM[row_id]),Container($PARAM[row_id]).ListItem.Property(wall_id))]] + [String.IsEqual(Skin.String(BackgroundSetting),0) | String.IsEqual(Skin.String(BackgroundSetting),2)]" reversible="true">
+			<effect type="fade" start="100" end="50" time="300" tween="sine" easing="inout" />
+		</animation>
 	</include>
 
 	<include name="HomeWallCommon">

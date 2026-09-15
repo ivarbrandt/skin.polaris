@@ -108,6 +108,12 @@
 					<include>DefaultSettingButton</include>
 					<onclick>$VAR[HomeOnLeftSettingToggleVar]</onclick>
 				</control>
+				<control type="button" id="63715">
+					<label>Home screen tab loading</label>
+					<label2>$VAR[HomeTabLoadingSettingVar]</label2>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(HomeWalls.ManualLoading)</onclick>
+				</control>
 				<!-- SEARCH WINDOW ON BACK -->
 				<control type="button" id="63702">
 					<label>Search window on back action</label>

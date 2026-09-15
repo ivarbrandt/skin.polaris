@@ -600,6 +600,11 @@
 		<value>Open main menu</value>
 	</variable>
 
+	<variable name="HomeTabLoadingSettingVar">
+		<value condition="Skin.HasSetting(HomeWalls.ManualLoading)">Manual</value>
+		<value>Auto</value>
+	</variable>
+
 	<variable name="HomeOnLeftSettingToggleVar">
 		<value condition="String.IsEqual(Skin.String(onLeftSetting.Home),1)">Skin.SetString(onLeftSetting.Home,0)</value>
 		<value>Skin.SetString(onLeftSetting.Home,1)</value>
