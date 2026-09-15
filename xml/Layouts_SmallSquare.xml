@@ -16,7 +16,7 @@
 				<control type="image">
 					<width>249</width>
 					<height>249</height>
-					<texture colordiffuse="66000000">masks/small-square.png</texture>
+					<texture colordiffuse="4D000000">masks/small-square.png</texture>
 				</control>
 				<control type="image">
 					<centertop>50%</centertop>

@@ -873,7 +873,7 @@
           <onclick>Number0</onclick>
           <onclick>SetFocus(9601)</onclick>
           <texturefocus border="15" colordiffuse="$VAR[FocusColorTheme]">masks/radius_15.png</texturefocus>
-          <texturenofocus border="15" colordiffuse="66000000">masks/radius_15.png</texturenofocus>
+          <texturenofocus border="15" colordiffuse="4D000000">masks/radius_15.png</texturenofocus>
           <textcolor>unfocused_text</textcolor>
           <focusedcolor>$VAR[FocusedTextColorVar]</focusedcolor>
         </control> -->

@@ -16,7 +16,7 @@
 				<width>430</width>
 				<height>300</height>
 				<control type="image">
-					<texture border="20" colordiffuse="66000000">masks/radius_20.png</texture>
+					<texture border="20" colordiffuse="4D000000">masks/radius_20.png</texture>
 				</control>
 				<control type="image">
 					<texture border="20" colordiffuse="$VAR[FocusColorTheme]">masks/radius_20.png</texture>

@@ -59,7 +59,7 @@
 				<control type="group">
 					<control type="image">
 					<bordersize>border_size</bordersize>
-					<texture colordiffuse="66000000">colors/white.png</texture>
+					<texture colordiffuse="4D000000">colors/white.png</texture>
 					<bordertexture border="border_size" colordiffuse="$VAR[FocusColorTheme]" infill="false">masks/bordertexture2.png</bordertexture>
 				</control>
 				</control>
