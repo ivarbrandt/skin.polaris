@@ -14,7 +14,7 @@
 				<width>242</width>
 				<height>242</height>
 				<control type="image">
-					<texture colordiffuse="66000000">masks/small-square.png</texture>
+					<texture colordiffuse="4D000000">masks/small-square.png</texture>
 				</control>
 				<control type="image">
 					<texture colordiffuse="$VAR[FocusColorTheme]">masks/small-square.png</texture>
